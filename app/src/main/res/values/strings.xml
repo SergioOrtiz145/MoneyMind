@@ -1,3 +1,16 @@
 <resources>
     <string name="app_name">MoneyMind</string>
+    <string name="ingresar">Ingresar</string>
+    <string name="no_tienes_cuenta">¿No tienes cuenta?</string>
+    <string name="registrate">Registrate</string>
+    <string name="registrate_title">¡Registrate!</string>
+    <string name="primer_nombre">Primer nombre</string>
+    <string name="primer_apellido">Primer apellido</string>
+    <string name="correo">Correo</string>
+    <string name="contrase_a">Contraseña</string>
+    <string name="confirmar_contrase_a">Confirmar contraseña</string>
+    <string name="registrar">Registrar</string>
+    <string name="ya_tienes_cuenta">¿Ya tienes cuenta?</string>
+    <string name="inicia_sesi_n">Inicia sesión</string>
+    <string name="primera_vez">¿Primera vez?</string>
 </resources>

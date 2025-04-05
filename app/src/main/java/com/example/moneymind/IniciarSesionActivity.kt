@@ -6,18 +6,18 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import com.example.moneymind.databinding.ActivityMainBinding
+import com.example.moneymind.databinding.ActivityIniciarSesionBinding
 
-class MainActivity : AppCompatActivity() {
-    private lateinit var binding: ActivityMainBinding
+class IniciarSesionActivity : AppCompatActivity() {
+    private lateinit var binding:ActivityIniciarSesionBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityMainBinding.inflate(layoutInflater)
+        binding = ActivityIniciarSesionBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        binding.login.setOnClickListener{
-            startActivity(Intent(this, IniciarSesionActivity::class.java))
+        binding.atrasButton.setOnClickListener {
+            startActivity(Intent(this, MainActivity::class.java))
         }
-        binding.register.setOnClickListener{
+        binding.signUpText.setOnClickListener{
             startActivity(Intent(this, RegistrarActivity::class.java))
         }
     }
