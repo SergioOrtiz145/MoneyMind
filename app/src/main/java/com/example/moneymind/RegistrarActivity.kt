@@ -20,5 +20,8 @@ class RegistrarActivity : AppCompatActivity() {
         binding.textViewSignIn.setOnClickListener {
             startActivity(Intent(this, IniciarSesionActivity::class.java))
         }
+        binding.buttonSignUp.setOnClickListener {
+            startActivity(Intent(this, ConocimientosActivity::class.java))
+        }
     }
 }

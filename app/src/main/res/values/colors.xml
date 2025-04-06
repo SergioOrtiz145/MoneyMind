@@ -6,7 +6,9 @@
     <color name="main_color">#0047AB</color>
     <color name="secondary_color">#A7C7E7</color>
     <color name="text_color">#1F1300</color>
-    <!-- Background Colors -->
     <color name="background_color">#FFFCF9</color>
     <color name="component_background">#E0E0E0</color>
+    <color name="boton_color">#FFFFFFFF</color>
+    <color name="boton_texto">#4CAF50</color>
+    <color name="boton_seleccion">#4CAF50</color>
 </resources>

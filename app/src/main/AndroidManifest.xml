@@ -13,6 +13,18 @@
         android:theme="@style/Theme.MoneyMind"
         tools:targetApi="31">
         <activity
+            android:name=".HomeFragment"
+            android:exported="false" />
+        <activity
+            android:name=".InicioActivity"
+            android:exported="false" />
+        <activity
+            android:name=".NivelFinanzasActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ConocimientosActivity"
+            android:exported="false" />
+        <activity
             android:name=".RegistrarActivity"
             android:exported="false" />
         <activity

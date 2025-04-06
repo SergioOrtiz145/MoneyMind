@@ -13,4 +13,15 @@
     <string name="ya_tienes_cuenta">¿Ya tienes cuenta?</string>
     <string name="inicia_sesi_n">Inicia sesión</string>
     <string name="primera_vez">¿Primera vez?</string>
+    <string name="vamos_a_conocernos">¡Conozcámonos más!</string>
+    <string name="qu_temas_te_interesan">¿Qué temas te interesan?</string>
+    <string name="ahorro_y_presupuestos">Ahorro y presupuestos</string>
+    <string name="inversiones">Inversiones</string>
+    <string name="deudas_y_cr_ditos">Deudas y créditos</string>
+    <string name="emprendimiento">Emprendimiento</string>
+    <string name="productos_financieros">Productos financieros</string>
+    <string name="continuar">Continuar</string>
+    <string name="bienvenido_a_moneymind">¡Bienvenido a MoneyMind!</string>
+    <string name="qu_tanto_crees_que_conoces_actualmente_sobre_las_finanzas">¿Qué tanto crees que conoces actualmente sobre las finanzas?</string>
+    <string name="escogiendo_m_dulos_para_ti">Escogiendo módulos para ti...</string>
 </resources>

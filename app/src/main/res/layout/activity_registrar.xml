@@ -15,7 +15,7 @@
         app:layout_constraintTop_toTopOf="parent"
         android:scaleType="fitCenter"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="30dp"
         android:background="@android:color/transparent"
         />
     <TextView
@@ -26,7 +26,7 @@
         android:layout_marginTop="100dp"
         android:text="@string/registrate_title"
         android:textColor="@android:color/white"
-        android:textSize="36sp"
+        android:textSize="30sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
