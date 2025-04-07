@@ -1,13 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white">
+    android:background="@color/white"
+    android:backgroundTint="@color/white"
+    android:orientation="vertical" >
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_marginTop="160dp"
+        app:srcCompat="@drawable/moneymindlogo" />
 
     <TextView
-        android:layout_width="wrap_content"
+        android:id="@+id/textView3"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Pantalla de inicio"
-        android:textSize="24sp"
-        android:layout_gravity="center" />
-</FrameLayout>
+        android:text="@string/bienvenido_a_moneymind_tu_espacio_para_aprender_a_manejar_mejor_tu_dinero"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:textAlignment="center"/>
+    <TextView
+        android:id="@+id/tipFinancieroText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="90dp"
+        android:layout_marginHorizontal="24dp"
+        android:text="“No se trata de cuánto dinero ganas, sino de cuánto dinero conservas.”\n\n– Robert Kiyosaki"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:textStyle="italic"
+        android:fontFamily="sans-serif-medium"
+        android:textAlignment="center"
+        android:lineSpacingExtra="4dp"
+        />
+</LinearLayout>
