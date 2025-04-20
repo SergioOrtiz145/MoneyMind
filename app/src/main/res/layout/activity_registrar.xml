@@ -104,6 +104,7 @@
             android:layout_height="wrap_content"
             android:background="#16345D"
             android:hint="@string/contrase_a"
+            android:inputType="textPassword"
             android:paddingStart="16dp"
             android:paddingTop="12dp"
             android:paddingEnd="8dp"

@@ -3,16 +3,93 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:gravity="center"
-    android:background="@color/background_color"
-    android:padding="24dp">
+    android:background="@color/white"
+    android:scrollbars="vertical">
 
-    <TextView
-        android:id="@+id/textViewModulos"
-        android:layout_width="wrap_content"
+    <!-- Contenedor para Nivel Básico -->
+    <LinearLayout
+        android:id="@+id/contenedorBásico"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Tus Módulos Personalizados"
-        android:textColor="@color/text_color"
-        android:textSize="24sp"
-        android:textStyle="bold" />
+        android:orientation="vertical"
+        android:paddingTop="20dp"
+        android:background="?android:attr/selectableItemBackground"
+        >
+
+        <TextView
+            android:id="@+id/tituloBásico"
+            android:textAlignment="center"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="Nivel Básico"
+            android:background="#FF9800"
+            android:textSize="22sp"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            />
+
+        <ListView
+            android:id="@+id/listViewBasico"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#FFCC80"/>
+
+    </LinearLayout>
+
+    <!-- Contenedor para Nivel Intermedio -->
+    <LinearLayout
+        android:id="@+id/contenedorIntermedio"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="?android:attr/selectableItemBackground"
+        >
+
+        <TextView
+            android:id="@+id/tituloIntermedio"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="Nivel Intermedio"
+            android:textAlignment="center"
+            android:textSize="22sp"
+            android:textColor="@color/black"
+            android:background="@color/boton_seleccion"
+            android:textStyle="bold"
+            />
+
+        <ListView
+            android:id="@+id/listViewIntermedio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#A5D6A7"/>
+    </LinearLayout>
+
+    <!-- Contenedor para Nivel Avanzado -->
+    <LinearLayout
+        android:id="@+id/contenedorAvanzado"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="?android:attr/selectableItemBackground"
+        android:layout_marginBottom="10dp">
+
+        <TextView
+            android:id="@+id/tituloAvanzado"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="Nivel Avanzado"
+            android:textAlignment="center"
+            android:textSize="22sp"
+            android:textColor="@color/black"
+            android:background="#FF5722"
+            android:textStyle="bold"
+            />
+
+        <ListView
+            android:id="@+id/listViewAvanzado"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#FFAB91"/>
+    </LinearLayout>
+
 </LinearLayout>

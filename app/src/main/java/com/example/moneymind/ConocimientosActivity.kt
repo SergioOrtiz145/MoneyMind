@@ -35,7 +35,7 @@ class ConocimientosActivity : AppCompatActivity() {
             }
         }
         binding.continuarButton.setOnClickListener {
-            startActivity(Intent(this, NivelFinanzasActivity::class.java))
+            startActivity(Intent(this, TestActivity::class.java))
         }
 
     }
