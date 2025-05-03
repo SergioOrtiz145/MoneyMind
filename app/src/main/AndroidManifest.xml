@@ -13,6 +13,23 @@
         android:theme="@style/Theme.MoneyMind"
         tools:targetApi="31">
         <activity
+            android:name=".LogroActivity"
+            android:exported="false" />
+        <activity
+            android:name=".VideoActivity"
+            android:exported="false" />
+
+        <meta-data
+            android:name="com.google.android.youtube.API_KEY"
+            android:value="@string/youtube_api_key" />
+
+        <activity
+            android:name=".DetalleModuloActivity"
+            android:exported="false" />
+        <activity
+            android:name=".DetallePublicacionActivity"
+            android:exported="false" />
+        <activity
             android:name=".CrearPublicacionActivity"
             android:exported="false" />
         <activity

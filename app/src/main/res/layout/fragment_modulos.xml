@@ -1,95 +1,115 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="@color/white"
-    android:scrollbars="vertical">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white">
 
-    <!-- Contenedor para Nivel Básico -->
     <LinearLayout
-        android:id="@+id/contenedorBásico"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:paddingTop="20dp"
-        android:background="?android:attr/selectableItemBackground"
-        >
+        android:layout_marginTop="15dp"
+        android:padding="16dp">
 
-        <TextView
-            android:id="@+id/tituloBásico"
-            android:textAlignment="center"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:text="Nivel Básico"
-            android:background="#FF9800"
-            android:textSize="22sp"
-            android:textColor="@color/black"
-            android:textStyle="bold"
-            />
-
-        <ListView
-            android:id="@+id/listViewBasico"
+        <!-- Nivel Básico -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardBasico"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#FFCC80"/>
+            android:layout_marginBottom="12dp"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="6dp">
 
-    </LinearLayout>
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                >
 
-    <!-- Contenedor para Nivel Intermedio -->
-    <LinearLayout
-        android:id="@+id/contenedorIntermedio"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:background="?android:attr/selectableItemBackground"
-        >
+                <TextView
+                    android:id="@+id/tituloBasico"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:gravity="center"
+                    android:text="Nivel Básico"
+                    android:background="#5AA60D"
+                    android:textSize="20sp"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"/>
 
-        <TextView
-            android:id="@+id/tituloIntermedio"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:text="Nivel Intermedio"
-            android:textAlignment="center"
-            android:textSize="22sp"
-            android:textColor="@color/black"
-            android:background="@color/boton_seleccion"
-            android:textStyle="bold"
-            />
+                <ListView
+                    android:id="@+id/listViewBasico"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
 
-        <ListView
-            android:id="@+id/listViewIntermedio"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="#A5D6A7"/>
-    </LinearLayout>
-
-    <!-- Contenedor para Nivel Avanzado -->
-    <LinearLayout
-        android:id="@+id/contenedorAvanzado"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:background="?android:attr/selectableItemBackground"
-        android:layout_marginBottom="10dp">
-
-        <TextView
-            android:id="@+id/tituloAvanzado"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:text="Nivel Avanzado"
-            android:textAlignment="center"
-            android:textSize="22sp"
-            android:textColor="@color/black"
-            android:background="#FF5722"
-            android:textStyle="bold"
-            />
-
-        <ListView
-            android:id="@+id/listViewAvanzado"
+        <!-- Nivel Intermedio -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardIntermedio"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#FFAB91"/>
-    </LinearLayout>
+            android:layout_marginBottom="12dp"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="6dp">
 
-</LinearLayout>
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/tituloIntermedio"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:gravity="center"
+                    android:text="Nivel Intermedio"
+                    android:background="#F28705"
+                    android:textSize="20sp"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"/>
+
+                <ListView
+                    android:id="@+id/listViewIntermedio"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Nivel Avanzado -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardAvanzado"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="6dp">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/tituloAvanzado"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:gravity="center"
+                    android:text="Nivel Avanzado"
+                    android:background="#F24B0F"
+                    android:textSize="20sp"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"/>
+
+                <ListView
+                    android:id="@+id/listViewAvanzado"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+    </LinearLayout>
+</ScrollView>

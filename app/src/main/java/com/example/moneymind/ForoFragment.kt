@@ -29,7 +29,11 @@ class ForoFragment : Fragment() {
         _binding = FragmentForoBinding.inflate(inflater, container, false)
 
         // Configurar RecyclerView
-        adapter = PublicacionAdapter(listaPublicaciones)
+        adapter = PublicacionAdapter(listaPublicaciones) { publicacion ->
+            val intent = Intent(requireContext(), DetallePublicacionActivity::class.java)
+            intent.putExtra("publicacionId", publicacion.id)
+            startActivity(intent)
+        }
         binding.recyclerPublicaciones.adapter = adapter
         binding.recyclerPublicaciones.layoutManager = LinearLayoutManager(context)
 
@@ -44,6 +48,7 @@ class ForoFragment : Fragment() {
             val intent = Intent(requireContext(), CrearPublicacionActivity::class.java)
             startActivityForResult(intent, 100) // para recargar al volver
         }
+
 
         return binding.root
     }

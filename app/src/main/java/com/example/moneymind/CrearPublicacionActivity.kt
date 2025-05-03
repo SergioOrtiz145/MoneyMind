@@ -1,10 +1,13 @@
 package com.example.moneymind
 
 import android.app.Activity
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.Toast
+import androidx.activity.result.ActivityResultLauncher
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import com.example.moneymind.databinding.ActivityCrearPublicacionBinding
 import com.example.moneymind.model.Publicacion
@@ -14,11 +17,22 @@ import com.google.firebase.database.*
 class CrearPublicacionActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityCrearPublicacionBinding
+    private lateinit var logroLauncher: ActivityResultLauncher<Intent>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityCrearPublicacionBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        logroLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
+            if (result.resultCode == Activity.RESULT_OK) {
+                // Aquí decides qué devolver a ForoFragment
+                val resultIntent = Intent()
+                setResult(Activity.RESULT_OK, resultIntent)
+                finish()
+            }
+        }
+
+
 
         binding.btnPublicar.setOnClickListener {
             val titulo = binding.edtTitulo.text.toString().trim()
@@ -54,8 +68,10 @@ class CrearPublicacionActivity : AppCompatActivity() {
                         binding.progressBar.visibility = View.GONE
                         if (it.isSuccessful) {
                             Toast.makeText(this@CrearPublicacionActivity, "Publicación creada", Toast.LENGTH_SHORT).show()
-                            setResult(Activity.RESULT_OK)
-                            finish()
+                            //mostrar logro primera publicación
+                            val intent = Intent(baseContext, LogroActivity::class.java)
+                            intent.putExtra("titulo", "Primera publicación")
+                            logroLauncher.launch(intent)
                         } else {
                             Log.e("FirebaseError", "Error: ${it.exception?.message}", it.exception)
                             Toast.makeText(this@CrearPublicacionActivity, "Error al publicar", Toast.LENGTH_SHORT).show()
@@ -70,6 +86,11 @@ class CrearPublicacionActivity : AppCompatActivity() {
                     Log.e("Firebase", "Error al obtener el autor: ${error.message}")
                 }
             })
+        }
+        binding.atrasButton.setOnClickListener {
+            binding.atrasButton.isEnabled = false
+            setResult(Activity.RESULT_CANCELED)
+            finish()
         }
     }
 }

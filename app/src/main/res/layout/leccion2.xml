@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.widget.ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Título de la Lección -->
+        <TextView
+            android:id="@+id/textTituloLeccion2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:textColor="@color/black"
+            android:layout_marginBottom="20dp"/>
+
+        <!-- Definición -->
+        <TextView
+            android:id="@+id/textDefinicionLeccion2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:textColor="@color/black"
+            android:layout_marginBottom="20dp"/>
+
+        <!-- Beneficios -->
+        <TextView
+            android:id="@+id/textTituloBeneficiosLeccion2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Beneficios o Importancia"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="@color/boton_seleccion"
+            android:layout_marginBottom="15dp"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/listViewBeneficiosLeccion2"
+            android:layout_width="match_parent"
+            android:layout_height="280dp" />
+
+        <!-- Pasos -->
+        <TextView
+            android:id="@+id/textTituloPasosLeccion2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Pasos a realizar"
+            android:textSize="18sp"
+            android:textColor="@color/boton_seleccion"
+            android:textStyle="bold"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="15dp"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/listViewPasosLeccion2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <!-- Consejos -->
+        <TextView
+            android:id="@+id/textTituloConsejosLeccion2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Consejos"
+            android:textColor="@color/boton_seleccion"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="15dp"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/listViewConsejosLeccion2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <!-- Conclusión -->
+        <TextView
+            android:id="@+id/textTituloConclusionLeccion2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Conclusión"
+            android:textColor="@color/boton_seleccion"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="15dp"/>
+
+        <TextView
+            android:id="@+id/textConclusionLeccion2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="16sp"/>
+    </LinearLayout>
+</android.widget.ScrollView>

@@ -63,11 +63,26 @@ class RegistrarActivity : AppCompatActivity() {
                     // Guarda la información adicional en Firebase Database
                     val database = FirebaseDatabase.getInstance().reference
                     val userRef = database.child("users").child(userId!!)
+                    //logros
+                    var primerModulo = false
+                    var modulos3 = false
+                    var completarNivel = false
+                    var primeraPublicacion = false
+                    var publicaciones5 = false
+                    var primerComentario = false
+                    var comentarios5 = false
 
                     val userData = mapOf(
                         "name" to nombre,
                         "lastName" to apellido,
-                        "email" to correo
+                        "email" to correo,
+                        "primerModulo" to primerModulo,
+                        "modulos3" to modulos3,
+                        "completarNivel" to completarNivel,
+                        "primeraPublicacion" to primeraPublicacion,
+                        "publicaciones5" to publicaciones5,
+                        "primerComentario" to primerComentario,
+                        "comentarios5" to comentarios5
                     )
 
                     userRef.setValue(userData).addOnCompleteListener { databaseTask ->

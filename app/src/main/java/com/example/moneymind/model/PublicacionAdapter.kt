@@ -10,7 +10,8 @@ import java.text.SimpleDateFormat
 import java.util.Date
 import java.util.Locale
 
-class PublicacionAdapter(private val lista: List<Publicacion>) :
+class PublicacionAdapter(private val lista: List<Publicacion>,
+    private val onItemClick: (Publicacion) -> Unit) :
     RecyclerView.Adapter<PublicacionAdapter.PublicacionViewHolder>() {
 
     inner class PublicacionViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -27,11 +28,16 @@ class PublicacionAdapter(private val lista: List<Publicacion>) :
     }
 
     override fun onBindViewHolder(holder: PublicacionViewHolder, position: Int) {
+        val publicacion = lista[position]
         val pub = lista[position]
         holder.titulo.text = pub.titulo
         holder.contenido.text = pub.contenido
         holder.autor.text = pub.autor
         holder.fecha.text = SimpleDateFormat("dd/MM/yyyy HH:mm", Locale.getDefault()).format(Date(pub.fecha))
+        // Aquí capturamos el clic
+        holder.itemView.setOnClickListener {
+            onItemClick(publicacion)
+        }
     }
 
     override fun getItemCount(): Int = lista.size

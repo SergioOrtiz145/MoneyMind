@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Contenido principal en LinearLayout -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <ImageButton
+            android:id="@+id/atrasButton"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            app:srcCompat="@drawable/flecha_atras_icon"
+            android:scaleType="fitCenter"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="20dp"
+            android:background="@android:color/transparent"/>
+
+        <TextView
+            android:id="@+id/tituloModulo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="25sp"
+            android:text="Título del módulo"
+            android:textStyle="bold"
+            android:textAlignment="center"
+            android:layout_marginBottom="20dp"
+            android:textColor="@color/black"
+            android:paddingBottom="8dp"/>
+
+        <TextView
+            android:id="@+id/descripcionModulo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Descripción del módulo"
+            android:textSize="18sp"
+            android:textColor="@color/black"
+            android:paddingBottom="16dp"
+            android:layout_marginBottom="26dp"/>
+
+        <!-- Lección 1 -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardLeccion1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="24dp"
+            android:layout_marginBottom="8dp"
+            android:elevation="4dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="#F24B0F"
+                android:padding="16dp">
+
+                <TextView
+                    android:id="@+id/tituloLeccion1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Lección 1"
+                    android:textStyle="bold"
+                    android:textColor="@color/white"
+                    android:textSize="18sp"/>
+
+                <LinearLayout
+                    android:id="@+id/expandableLeccion1"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:background="#EEEEEE"
+                    android:visibility="gone">
+                    <ScrollView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fillViewport="true">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <include
+                                android:id="@+id/leccion1Layout"
+                                layout="@layout/leccion1" />
+
+                        </LinearLayout>
+                    </ScrollView>
+                </LinearLayout>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Lección 2 -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardLeccion2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            app:cardCornerRadius="24dp"
+            android:elevation="4dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="#F28705"
+                android:padding="16dp">
+
+                <TextView
+                    android:id="@+id/tituloLeccion2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Lección 2"
+                    android:textStyle="bold"
+                    android:textColor="@color/white"
+                    android:textSize="18sp"/>
+
+                <LinearLayout
+                    android:id="@+id/expandableLeccion2"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#EEEEEE"
+                    android:layout_marginTop="20dp"
+                    android:visibility="gone">
+                    <include
+                        android:id="@+id/leccion2Layout"
+                        layout="@layout/leccion2"/>
+                </LinearLayout>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Quiz -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardQuiz"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="24dp"
+            android:layout_marginBottom="8dp"
+            android:elevation="4dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="#5AA60D"
+                android:padding="16dp">
+
+                <TextView
+                    android:id="@+id/tituloQuiz"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Quiz"
+                    android:textStyle="bold"
+                    android:textColor="@color/white"
+                    android:textSize="18sp"/>
+
+                <LinearLayout
+                    android:id="@+id/expandableQuiz"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#EEEEEE"
+                    android:layout_marginTop="20dp"
+                    android:visibility="gone">
+                    <include
+                        android:id="@+id/quizLayout"
+                        layout="@layout/quiz"/>
+                </LinearLayout>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Juego -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardJuego"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            app:cardCornerRadius="24dp"
+            android:elevation="4dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#04D9D9"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:id="@+id/tituloJuego"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Juego"
+                    android:textColor="@color/white"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:id="@+id/expandableJuego"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:background="#EEEEEE"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+                    <include
+                        android:id="@+id/juegoLayout"
+                        layout="@layout/juego" />
+                </LinearLayout>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Video -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardVideo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="24dp"
+            android:elevation="4dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="#049DD9"
+                android:padding="16dp">
+
+                <TextView
+                    android:id="@+id/tituloVideo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Video"
+                    android:textStyle="bold"
+                    android:textColor="@color/white"
+                    android:textSize="18sp"/>
+
+                <LinearLayout
+                    android:id="@+id/expandableVideo"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#EEEEEE"
+                    android:layout_marginTop="20dp"
+                    android:visibility="gone">
+                    <include
+                        android:id="@+id/videoLayout"
+                        layout="@layout/video"/>
+                </LinearLayout>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <Button
+            android:id="@+id/buttonCompletarModulo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:layout_marginHorizontal="50dp"
+            android:textSize="18sp"
+            android:backgroundTint="@color/main_color"
+            android:text="Completar módulo" />
+
+    </LinearLayout>
+
+    <!-- Fullscreen container fuera del layout principal -->
+    <FrameLayout
+        android:id="@+id/full_screen_view_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        android:background="@android:color/black"/>
+</FrameLayout>

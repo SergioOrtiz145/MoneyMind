@@ -1,27 +1,369 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:gravity="center"
-    android:background="@color/background_color"
-    android:padding="24dp">
+    android:clipToPadding="false"
+    android:paddingBottom="180dp"
+    android:background="@color/background_color">
 
-    <TextView
-        android:id="@+id/textViewNombreUsuario"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Nombre de usuario"
-        android:textColor="@color/text_color"
-        android:textSize="24sp"
-        android:textStyle="bold" />
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:padding="16dp">
 
-    <Button
-        android:id="@+id/buttonCerrarSesion"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Cerrar Sesión"
-        android:layout_marginTop="20dp"
-        android:backgroundTint="@color/boton_color"
-        android:textColor="@color/boton_texto"/>
-</LinearLayout>
+        <!-- Foto de perfil -->
+        <ImageButton
+            android:id="@+id/cerrarSesionButton"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@color/background_color"
+            android:layout_gravity="end"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/icono_cerrar_sesion" />
+
+        <ImageView
+            android:id="@+id/imageView5"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_marginTop="50dp"
+            app:srcCompat="@drawable/foto_perfil" />
+
+        <!-- Nombre del usuario -->
+        <TextView
+            android:id="@+id/nombre"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="25sp"
+            android:textColor="@color/main_color"
+            android:fontFamily="@font/oswald_variablefont_wght"
+            android:textAlignment="center"
+            android:layout_marginTop="20dp" />
+
+        <!-- Nivel del usuario -->
+        <TextView
+            android:id="@+id/nivel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:textColor="@color/black"
+            android:textSize="25sp"
+            android:fontFamily="@font/oswald_variablefont_wght"
+            android:textAlignment="center"
+            android:text="Eres nivel básico" />
+
+        <!-- Título intereses -->
+        <TextView
+            android:id="@+id/textViewIntereses"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Tus intereses:"
+            android:textSize="20sp"
+            android:textColor="@color/black"
+            android:layout_marginTop="20dp"
+            android:textAlignment="center"
+            android:fontFamily="@font/oswald_variablefont_wght" />
+
+        <!-- Contenedor de intereses -->
+        <GridLayout
+            android:id="@+id/layoutIntereses"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:alignmentMode="alignMargins"
+            android:columnCount="2"
+            android:orientation="horizontal" />
+
+        <!-- Línea separadora -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="5dp"
+            android:layout_marginTop="20dp"
+            android:background="#CCCCCC" />
+
+        <!-- Título logros -->
+        <TextView
+            android:id="@+id/textView12"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:padding="5dp"
+            android:textSize="25sp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/oswald_variablefont_wght"
+            android:text="Logros" />
+
+        <!-- Línea separadora -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="5dp"
+            android:background="#CCCCCC"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Contenedor de logros -->
+        <GridLayout
+            android:id="@+id/gridLogros"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:columnCount="3"
+            android:alignmentMode="alignMargins"
+            android:padding="16dp"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardLogro1"
+                android:layout_width="0dp"
+                android:layout_height="145dp"
+                android:layout_margin="8dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="4dp"
+                app:cardBackgroundColor="@color/white"
+                android:layout_columnWeight="1">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp"
+                    android:gravity="center_horizontal">
+
+                    <ImageView
+                        android:id="@+id/imageLogro1"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:src="@drawable/logro1"
+                        android:contentDescription="Logro 1" />
+
+                    <TextView
+                        android:id="@+id/textLogro1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Completar el primer módulo."
+                        android:textSize="12sp"
+                        android:fontFamily="@font/oswald_variablefont_wght"
+                        android:textAlignment="center"
+                        android:layout_marginTop="8dp" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardLogro2"
+                android:layout_width="0dp"
+                android:layout_height="145dp"
+                android:layout_margin="8dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="4dp"
+                app:cardBackgroundColor="@color/white"
+                android:layout_columnWeight="1">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp"
+                    android:gravity="center_horizontal">
+
+                    <ImageView
+                        android:id="@+id/imageLogro2"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:src="@drawable/logro2"
+                        android:contentDescription="Logro 2" />
+
+                    <TextView
+                        android:id="@+id/textLogro2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Completar 3 módulos."
+                        android:textSize="12sp"
+                        android:fontFamily="@font/oswald_variablefont_wght"
+                        android:textAlignment="center"
+                        android:layout_marginTop="8dp" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardLogro3"
+                android:layout_width="0dp"
+                android:layout_height="145dp"
+                android:layout_margin="8dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="4dp"
+                app:cardBackgroundColor="@color/white"
+                android:layout_columnWeight="1">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp"
+                    android:gravity="center_horizontal">
+
+                    <ImageView
+                        android:id="@+id/imageLogro3"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:src="@drawable/logro3"
+                        android:contentDescription="Logro 1" />
+
+                    <TextView
+                        android:id="@+id/textLogro3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Completar un nivel."
+                        android:textSize="12sp"
+                        android:fontFamily="@font/oswald_variablefont_wght"
+                        android:textAlignment="center"
+                        android:layout_marginTop="8dp" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardLogro4"
+                android:layout_width="0dp"
+                android:layout_height="145dp"
+                android:layout_margin="8dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="4dp"
+                app:cardBackgroundColor="@color/white"
+                android:layout_columnWeight="1">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp"
+                    android:gravity="center_horizontal">
+
+                    <ImageView
+                        android:id="@+id/imageLogro4"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:src="@drawable/logro4"
+                        android:contentDescription="Logro 1" />
+
+                    <TextView
+                        android:id="@+id/textLogro4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Realizar una publicación."
+                        android:textSize="12sp"
+                        android:fontFamily="@font/oswald_variablefont_wght"
+                        android:textAlignment="center"
+                        android:layout_marginTop="8dp" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardLogro5"
+                android:layout_width="0dp"
+                android:layout_height="145dp"
+                android:layout_margin="8dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="4dp"
+                app:cardBackgroundColor="@color/white"
+                android:layout_columnWeight="1">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp"
+                    android:gravity="center_horizontal">
+
+                    <ImageView
+                        android:id="@+id/imageLogro5"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:src="@drawable/logro5"
+                        android:contentDescription="Logro 1" />
+
+                    <TextView
+                        android:id="@+id/textLogro5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Realizar 5 publicaciones."
+                        android:textSize="12sp"
+                        android:fontFamily="@font/oswald_variablefont_wght"
+                        android:textAlignment="center"
+                        android:layout_marginTop="8dp" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardLogro6"
+                android:layout_width="0dp"
+                android:layout_height="145dp"
+                android:layout_margin="8dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="4dp"
+                app:cardBackgroundColor="@color/white"
+                android:layout_columnWeight="1">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp"
+                    android:gravity="center_horizontal">
+
+                    <ImageView
+                        android:id="@+id/imageLogro6"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:src="@drawable/logro6"
+                        android:contentDescription="Logro 1" />
+
+                    <TextView
+                        android:id="@+id/textLogro6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Realizar un comentario."
+                        android:textSize="12sp"
+                        android:fontFamily="@font/oswald_variablefont_wght"
+                        android:textAlignment="center"
+                        android:layout_marginTop="8dp" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardLogro7"
+                android:layout_width="0dp"
+                android:layout_height="145dp"
+                android:layout_margin="8dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="4dp"
+                app:cardBackgroundColor="@color/white"
+                android:layout_columnWeight="1">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp"
+                    android:gravity="center_horizontal">
+
+                    <ImageView
+                        android:id="@+id/imageLogro7"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:src="@drawable/logro7"
+                        android:contentDescription="Logro 7" />
+
+                    <TextView
+                        android:id="@+id/textLogro7"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Realizar 5 comentarios."
+                        android:textSize="12sp"
+                        android:fontFamily="@font/oswald_variablefont_wght"
+                        android:textAlignment="center"
+                        android:layout_marginTop="8dp" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+        </GridLayout>
+
+    </LinearLayout>
+</ScrollView>

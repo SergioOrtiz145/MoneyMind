@@ -15,6 +15,7 @@ googleGmsGoogleServices = "4.4.2"
 firebaseDatabase = "21.0.0"
 firebaseAuthKtx = "23.2.0"
 firebaseCrashlyticsBuildtools = "3.0.3"
+youtubeAndroidPlayerApi = "1.2.2"
 
 [libraries]
 androidx-cardview = { module = "androidx.cardview:cardview", version.ref = "cardview" }
@@ -30,6 +31,7 @@ material-v1100 = { module = "com.google.android.material:material", version.ref 
 firebase-database = { group = "com.google.firebase", name = "firebase-database", version.ref = "firebaseDatabase" }
 firebase-auth-ktx = { group = "com.google.firebase", name = "firebase-auth-ktx", version.ref = "firebaseAuthKtx" }
 firebase-crashlytics-buildtools = { group = "com.google.firebase", name = "firebase-crashlytics-buildtools", version.ref = "firebaseCrashlyticsBuildtools" }
+youtube-android-player-api = { module = "com.google.android.youtube:youtube-android-player-api", version.ref = "youtubeAndroidPlayerApi" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
