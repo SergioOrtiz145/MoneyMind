@@ -95,7 +95,7 @@
         app:layout_constraintStart_toStartOf="parent"
         android:layout_marginTop="120dp"
         android:fontFamily="@font/oswald_variablefont_wght"
-        android:layout_marginHorizontal="143dp"
+        android:layout_marginHorizontal="164dp"
         android:textSize="30sp"
         android:textStyle="bold" />
 

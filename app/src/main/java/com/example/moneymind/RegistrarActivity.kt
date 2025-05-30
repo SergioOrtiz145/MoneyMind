@@ -87,7 +87,6 @@ class RegistrarActivity : AppCompatActivity() {
 
                     userRef.setValue(userData).addOnCompleteListener { databaseTask ->
                         if (databaseTask.isSuccessful) {
-                            Toast.makeText(this, "Usuario registrado exitosamente", Toast.LENGTH_SHORT).show()
                             clearSharedPreferences()
                             startActivity(Intent(this, ConocimientosActivity::class.java))
                             finish()

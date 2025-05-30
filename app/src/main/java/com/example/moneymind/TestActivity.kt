@@ -2,11 +2,16 @@ package com.example.moneymind
 
 import android.content.Context
 import android.content.Intent
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.util.Log
+import android.widget.Button
 import android.widget.LinearLayout
 import android.widget.RadioButton
+import android.widget.TextView
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.example.moneymind.databinding.ActivityTestBinding
 import com.example.moneymind.model.FirebaseService
@@ -129,12 +134,29 @@ class TestActivity : AppCompatActivity() {
             else -> "básico"
         }
         guardarResultado(nivel)
+        val dialogView = layoutInflater.inflate(R.layout.dialog_nivel, null)
+        val mensaje = dialogView.findViewById<TextView>(R.id.tvMensaje)
+        val titulo = dialogView.findViewById<TextView>(R.id.tvTitulo)
+        val btnAceptar = dialogView.findViewById<Button>(R.id.btnAceptar)
+        titulo.text = "¡Felicidades! Quedaste en nivel $nivel!"
+        mensaje.text = "Continúa mejorando tus conocimientos."
 
-        Toast.makeText(this, "Tu nivel es: $nivel ($puntaje/${listaPreguntas.size})", Toast.LENGTH_LONG).show()
-        //saltar al home de la app
-        startActivity(Intent(baseContext, InicioActivity::class.java))
+        val dialog = AlertDialog.Builder(this)
+            .setView(dialogView)
+            .setCancelable(false)
+            .create()
+        btnAceptar.setOnClickListener {
+            dialog.dismiss()
+            startActivity(Intent(this, InicioActivity::class.java))
+            finish()
+        }
+        // Esperar a que el dialog esté listo para modificar el fondo
+        dialog.setOnShowListener {
+            dialog.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+        }
 
-        // Aquí podrías guardar el resultado en Firebase si lo deseas
+        dialog.show()
+
     }
     private fun guardarResultado(nivel: String){
         val sharedPreferences = getSharedPreferences("user_preferences", Context.MODE_PRIVATE)
@@ -154,7 +176,6 @@ class TestActivity : AppCompatActivity() {
             // Guarda el puntaje bajo el ID de usuario
             userRef.child("nivel").setValue(nivel)
                 .addOnSuccessListener {
-                    Toast.makeText(this, "Puntaje guardado correctamente", Toast.LENGTH_SHORT).show()
                 }
                 .addOnFailureListener {
                     Toast.makeText(this, "Error al guardar el puntaje", Toast.LENGTH_SHORT).show()

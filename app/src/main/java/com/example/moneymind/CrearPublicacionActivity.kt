@@ -31,9 +31,6 @@ class CrearPublicacionActivity : AppCompatActivity() {
                 finish()
             }
         }
-
-
-
         binding.btnPublicar.setOnClickListener {
             val titulo = binding.edtTitulo.text.toString().trim()
             val contenido = binding.edtContenido.text.toString().trim()
@@ -67,7 +64,6 @@ class CrearPublicacionActivity : AppCompatActivity() {
                     database.child(id).setValue(publicacion).addOnCompleteListener {
                         binding.progressBar.visibility = View.GONE
                         if (it.isSuccessful) {
-                            Toast.makeText(this@CrearPublicacionActivity, "Publicación creada", Toast.LENGTH_SHORT).show()
                             //mostrar logro primera publicación
                             val intent = Intent(baseContext, LogroActivity::class.java)
                             intent.putExtra("titulo", "Primera publicación")

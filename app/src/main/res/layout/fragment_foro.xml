@@ -15,10 +15,11 @@
             android:layout_height="wrap_content"
             android:text="¡Bienvenido a la Comunidad!"
             android:textAlignment="center"
+            android:textColor="@color/black"
             android:textSize="25sp"
             android:textStyle="bold"
             android:layout_marginBottom="20dp"
-            android:layout_marginTop="20dp"/>
+            android:layout_marginTop="25dp"/>
 
         <TextView
             android:id="@+id/textViewSubtitulo"
@@ -26,6 +27,7 @@
             android:layout_height="wrap_content"
             android:text="¡Realiza alguna publicación sobre un tema financiero de interes o interactua con publicaciones de otras personas!"
             android:textSize="16sp"
+            android:textColor="@color/black"
             android:textAlignment="center"
             android:layout_marginBottom="20dp"/>
 
